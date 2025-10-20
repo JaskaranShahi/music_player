@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tunex - Amrinder Gill</title>
+    <link rel="stylesheet" href="../css/singers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+   
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <a href="#" class="logo">
+                    <i class="fas fa-compact-disc"></i>
+                    Tune<span>X</span>
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-title">Menu</div>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-compact-disc"></i>
+                    <span>Artists</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Charts</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-microphone"></i>
+                    <span>Artists</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-record-vinyl"></i>
+                    <span>Albums</span>
+                </a>
+            </nav>
+            <nav class="sidebar-nav">
+                <div class="nav-title">Library</div>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-history"></i>
+                    <span>Recent</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-heart"></i>
+                    <span>Favorites</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-download"></i>
+                    <span>Downloads</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <button class="back-button" onclick="window.location.href = 'artists.html'">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <section class="artist-header">
+                <div class="artist-img-container">
+                    <img src="../images/amrinder_gill.jpg" alt="Arjan Dhillon" />
+                </div>
+                <div class="artist-info">
+                    <div class="verified-artist">
+                        <i class="fas fa-check-circle"></i> Verified Artist
+                    </div>
+                    <h1 class="artist-name">Amrinder Gill</h1>
+                    <p class="monthly-listeners">5,512,992 monthly listeners</p>
+                </div>
+            </section>
+            
+            <section class="artist-actions">
+                <button class="play-btn" onclick="playPopularTrack()">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="following-btn">Following</button>
+                <button class="more-options-btn">...</button>
+            </section>
+
+            <section class="popular-tracks">
+                <h2 class="popular-tracks-title">Popular</h2>
+                <ul class="song-list">
+                    <li class="song-item">
+                        <span class="song-number">1</span>
+                        <div class="song-controls">
+                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                                <i class="fas fa-play play-icon"></i>
+                                <i class="fas fa-pause pause-icon"></i>
+                            </button>
+                        </div>
+                        <div class="song-album-cover">
+                            <img src="../images/asi_gabru.jpg" alt="Album Cover" />
+                        </div>
+                        <div class="song-info">
+                            <span class="song-title">Judaa</span>
+                        </div>
+                        <div class="song-listeners">21,383,506</div>
+                        <div class="song-duration">2:09</div>
+                        <audio src="../songs/judaa.mp3"></audio>
+                    </li>
+                    <li class="song-item">
+                        <span class="song-number">2</span>
+                        <div class="song-controls">
+                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                                <i class="fas fa-play play-icon"></i>
+                                <i class="fas fa-pause pause-icon"></i>
+                            </button>
+                        </div>
+                        <div class="song-album-cover">
+                            <img src="../images/pendu.jpg" alt="Album Cover" />
+                        </div>
+                        <div class="song-info">
+                            <span class="song-title">Pendu</span>
+                        </div>
+                        <div class="song-listeners">34,587,060</div>
+                        <div class="song-duration">2:58</div>
+                        <audio src="../songs/pendu.mp3"></audio>
+                    </li>
+                    <li class="song-item">
+                        <span class="song-number">3</span>
+                        <div class="song-controls">
+                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                                <i class="fas fa-play play-icon"></i>
+                                <i class="fas fa-pause pause-icon"></i>
+                            </button>
+                        </div>
+                        <div class="song-album-cover">
+                            <img src="../images/paigaam2.jpg" alt="Album Cover" />
+                        </div>
+                        <div class="song-info">
+                            <span class="song-title">Paigaam</span>
+                        </div>
+                        <div class="song-listeners">12,123,456</div>
+                        <div class="song-duration">3:15</div>
+                        <audio src="../songs/paigaam.mp3"></audio>
+                    </li>
+                    <li class="song-item">
+                        <span class="song-number">4</span>
+                        <div class="song-controls">
+                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                                <i class="fas fa-play play-icon"></i>
+                                <i class="fas fa-pause pause-icon"></i>
+                            </button>
+                        </div>
+                        <div class="song-album-cover">
+                            <img src="../images/adore.jpg" alt="Album Cover" />
+                        </div>
+                        <div class="song-info">
+                            <span class="song-title">Adore</span>
+                        </div>
+                        <div class="song-listeners">9,876,543</div>
+                        <div class="song-duration">2:45</div>
+                        <audio src="../songs/adore.mp3"></audio>
+                    </li>
+                    <li class="song-item">
+                        <span class="song-number">5</span>
+                        <div class="song-controls">
+                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                                <i class="fas fa-play play-icon"></i>
+                                <i class="fas fa-pause pause-icon"></i>
+                            </button>
+                        </div>
+                        <div class="song-album-cover">
+                            <img src="../images/akhar.jpg" alt="Album Cover" />
+                        </div>
+                        <div class="song-info">
+                            <span class="song-title">Akhar</span>
+                        </div>
+                        <div class="song-listeners">8,543,210</div>
+                        <div class="song-duration">3:30</div>
+                        <audio src="../songs/akhar.mp3"></audio>
+                    </li>
+                    <li class="song-item">
+                        <span class="song-number">6</span>
+                        <div class="song-controls">
+                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                                <i class="fas fa-play play-icon"></i>
+                                <i class="fas fa-pause pause-icon"></i>
+                            </button>
+                        </div>
+                        <div class="song-album-cover">
+                            <img src="../images/chal_jindiye.jpg" alt="Album Cover" />
+                        </div>
+                        <div class="song-info">
+                            <span class="song-title">Chal Jindiye</span>
+                        </div>
+                        <div class="song-listeners">7,654,321</div>
+                        <div class="song-duration">4:01</div>
+                        <audio src="../songs/chal_jindiye.mp3"></audio>
+                    </li>
+                    <li class="song-item">
+                        <span class="song-number">7</span>
+                        <div class="song-controls">
+                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                                <i class="fas fa-play play-icon"></i>
+                                <i class="fas fa-pause pause-icon"></i>
+                            </button>
+                        </div>
+                        <div class="song-album-cover">
+                            <img src="../images/dildariyan.jpg" alt="Album Cover" />
+                        </div>
+                        <div class="song-info">
+                            <span class="song-title">Dildariyan</span>
+                        </div>
+                        <div class="song-listeners">6,543,210</div>
+                        <div class="song-duration">2:55</div>
+                        <audio src="../songs/dildarian.mp3"></audio>
+                    </li>
+                    <li class="song-item">
+                        <span class="song-number">8</span>
+                        <div class="song-controls">
+                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                                <i class="fas fa-play play-icon"></i>
+                                <i class="fas fa-pause pause-icon"></i>
+                            </button>
+                        </div>
+                        <div class="song-album-cover">
+                            <img src="../images/supna.jpg" alt="Album Cover" />
+                        </div>
+                        <div class="song-info">
+                            <span class="song-title">Supna</span>
+                        </div>
+                        <div class="song-listeners">5,432,109</div>
+                        <div class="song-duration">3:10</div>
+                        <audio src="../songs/supna.mp3"></audio>
+                    </li>
+                    <li class="song-item">
+                        <span class="song-number">9</span>
+                        <div class="song-controls">
+                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                                <i class="fas fa-play play-icon"></i>
+                                <i class="fas fa-pause pause-icon"></i>
+                            </button>
+                        </div>
+                        <div class="song-album-cover">
+                            <img src="../images/sohni_kudi.jpg" alt="Album Cover" />
+                        </div>
+                        <div class="song-info">
+                            <span class="song-title">Sohni Kudi</span>
+                        </div>
+                        <div class="song-listeners">4,321,098</div>
+                        <div class="song-duration">3:45</div>
+                        <audio src="../songs/sohni_kudi.mp3"></audio>
+                    </li>
+                    <li class="song-item">
+                        <span class="song-number">10</span>
+                        <div class="song-controls">
+                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                                <i class="fas fa-play play-icon"></i>
+                                <i class="fas fa-pause pause-icon"></i>
+                            </button>
+                        </div>
+                        <div class="song-album-cover">
+                            <img src="../images/kurta_suha.jpg" alt="Album Cover" />
+                        </div>
+                        <div class="song-info">
+                            <span class="song-title">Kurta Suha</span>
+                        </div>
+                        <div class="song-listeners">3,210,987</div>
+                        <div class="song-duration">3:05</div>
+                        <audio src="../songs/kurta_suha.mp3"></audio>
+                    </li>
+                </ul>
+            </section>
+            
+            <section class="albums-section">
+                <h2 class="popular-tracks-title">Albums</h2>
+                <div class="albums-grid">
+                    <div class="album-card">
+                        <img src="../images/dildariyan.jpg" alt="Album Cover" class="album-img-circle" />
+                        <div class="card-content">
+                            <h3 class="card-title">Dildarian</h3>
+                            <p class="card-subtitle">Amrinder Gill</p>
+                        </div>
+                        <button class="play-pause-btn-circle" onclick="playAudio(this.closest('.album-card'))">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                        <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3"></audio>
+                    </div>
+                    <div class="album-card">
+                        <img src="../images/asi_gabru.jpg" alt="Album Cover" class="album-img-circle" />
+                        <div class="card-content">
+                            <h3 class="card-title">Judaa</h3>
+                            <p class="card-subtitle">Amrinder Gill</p>
+                        </div>
+                        <button class="play-pause-btn-circle" onclick="playAudio(this.closest('.album-card'))">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                        <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3"></audio>
+                    </div>
+                    <div class="album-card">
+                        <img src="../images/judaa2.jpg" alt="Album Cover" class="album-img-circle" />
+                        <div class="card-content">
+                            <h3 class="card-title">Judaa2</h3>
+                            <p class="card-subtitle">Amrinder Gill</p>
+                        </div>
+                        <button class="play-pause-btn-circle" onclick="playAudio(this.closest('.album-card'))">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                        <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3"></audio>
+                    </div>
+                    <div class="album-card">
+                        <img src="../images/judaa3.jpg" alt="Album Cover" class="album-img-circle" />
+                        <div class="card-content">
+                            <h3 class="card-title">Judaa3</h3>
+                            <p class="card-subtitle">Amrinder Gill</p>
+                        </div>
+                        <button class="play-pause-btn-circle" onclick="playAudio(this.closest('.album-card'))">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                        <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"></audio>
+                    </div>
+                    <div class="album-card">
+                        <img src="../images/angrez.jpg" alt="Album Cover" class="album-img-circle" />
+                        <div class="card-content">
+                            <h3 class="card-title">Angrez</h3>
+                            <p class="card-subtitle">Amrinder Gill</p>
+                        </div>
+                        <button class="play-pause-btn-circle" onclick="playAudio(this.closest('.album-card'))">
+                            <i class="fas fa-play play-icon"></i>
+                            <i class="fas fa-pause pause-icon"></i>
+                        </button>
+                        <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3"></audio>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="playback-message" id="playbackMessage"></div>
+    
+    <script>
+        let currentAudio = null;
+        let playbackTimeout = null;
+        const playbackMessage = document.getElementById('playbackMessage');
+
+        function playAudio(item) {
+            const audio = item.querySelector('audio');
+            const title = item.querySelector('.song-title') ? item.querySelector('.song-title').textContent : item.querySelector('.card-title').textContent;
+
+            if (currentAudio && currentAudio !== audio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+                currentAudio.closest('.song-item, .album-card').classList.remove('playing');
+            }
+
+            if (audio.paused) {
+                audio.play();
+                currentAudio = audio;
+                item.classList.add('playing');
+                showPlaybackMessage(`Now playing: "${title}"`);
+            } else {
+                audio.pause();
+                currentAudio = null;
+                item.classList.remove('playing');
+                hidePlaybackMessage();
+            }
+        }
+
+        function playPopularTrack() {
+            const firstTrack = document.querySelector('.song-item');
+            playAudio(firstTrack);
+        }
+        
+        function showPlaybackMessage(message) {
+            clearTimeout(playbackTimeout);
+            playbackMessage.textContent = message;
+            playbackMessage.style.display = 'block';
+            playbackMessage.style.opacity = '1';
+            playbackTimeout = setTimeout(() => {
+                hidePlaybackMessage();
+            }, 3000);
+        }
+
+        function hidePlaybackMessage() {
+            playbackMessage.style.opacity = '0';
+            setTimeout(() => {
+                playbackMessage.style.display = 'none';
+            }, 500);
+        }
+    </script>
+</body>
+</html>
