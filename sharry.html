@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Tunex -Navaan Sandhu</title>
-    <link rel="stylesheet" href="../css/singers.css">
+    <title>Tunex - Sharry Maan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-   
+    <link rel="stylesheet" href="../css/singers.css">
 </head>
 <body>
     <div class="app-container">
@@ -24,36 +23,17 @@
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
-                <a href="#" class="nav-item active">
-                    <i class="fas fa-compact-disc"></i>
+                <a href="artists.html" class="nav-item active">
+                    <i class="fas fa-users"></i>
                     <span>Artists</span>
                 </a>
                 <a href="#" class="nav-item">
                     <i class="fas fa-chart-line"></i>
                     <span>Charts</span>
                 </a>
-                <a href="#" class="nav-item">
-                    <i class="fas fa-microphone"></i>
-                    <span>Artists</span>
-                </a>
-                <a href="#" class="nav-item">
+                <a href="albums.html" class="nav-item">
                     <i class="fas fa-record-vinyl"></i>
                     <span>Albums</span>
-                </a>
-            </nav>
-            <nav class="sidebar-nav">
-                <div class="nav-title">Library</div>
-                <a href="#" class="nav-item">
-                    <i class="fas fa-history"></i>
-                    <span>Recent</span>
-                </a>
-                <a href="#" class="nav-item">
-                    <i class="fas fa-heart"></i>
-                    <span>Favorites</span>
-                </a>
-                <a href="#" class="nav-item">
-                    <i class="fas fa-download"></i>
-                    <span>Downloads</span>
                 </a>
             </nav>
         </aside>
@@ -62,19 +42,20 @@
             <button class="back-button" onclick="window.location.href = 'artists.html'">
                 <i class="fas fa-arrow-left"></i>
             </button>
+
             <section class="artist-header">
                 <div class="artist-img-container">
-                    <img src="../images/navaan.jpg" alt="Arjan Dhillon" />
+                    <img src="../images/sharry_maan.jpg" alt="Sharry Maan" />
                 </div>
                 <div class="artist-info">
                     <div class="verified-artist">
                         <i class="fas fa-check-circle"></i> Verified Artist
                     </div>
-                    <h1 class="artist-name">Navaan Sandhu</h1>
-                    <p class="monthly-listeners">3,470,421 monthly listeners</p>
+                    <h1 class="artist-name">Sharry Maan</h1>
+                    <p class="monthly-listeners">2,845,672 monthly listeners</p>
                 </div>
             </section>
-            
+
             <section class="artist-actions">
                 <button class="play-btn" onclick="playPopularTrack()">
                     <i class="fas fa-play"></i>
@@ -84,247 +65,238 @@
             </section>
 
             <section class="popular-tracks">
-                <h2 class="popular-tracks-title">Popular</h2>
+                <h2 class="popular-tracks-title">Top 10 Songs</h2>
                 <ul class="song-list">
                     <li class="song-item">
                         <span class="song-number">1</span>
                         <div class="song-controls">
-                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                            <button class="song-play-pause-btn">
                                 <i class="fas fa-play play-icon"></i>
                                 <i class="fas fa-pause pause-icon"></i>
                             </button>
                         </div>
                         <div class="song-album-cover">
-                            <img src="../images/black_life.jpg" alt="Album Cover" />
+                            <img src="../images/peg_te_bhangra.jpg" alt="Peg Te Bhangra" />
                         </div>
                         <div class="song-info">
-                            <span class="song-title">Black Life</span>
+                            <span class="song-title">Peg Te Bhangra</span>
                         </div>
-                        <div class="song-listeners">21,383,506</div>
-                        <div class="song-duration">2:09</div>
-                        <audio src="../songs/black_life.mp3"></audio>
+                        <div class="song-listeners">30,400,000</div>
+                        <div class="song-duration">3:50</div>
+                        <audio src="../songs/peg_te_bhangra.mp3"></audio>
                     </li>
+                    
                     <li class="song-item">
                         <span class="song-number">2</span>
                         <div class="song-controls">
-                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                            <button class="song-play-pause-btn">
                                 <i class="fas fa-play play-icon"></i>
                                 <i class="fas fa-pause pause-icon"></i>
                             </button>
                         </div>
                         <div class="song-album-cover">
-                            <img src="../images/the_finest.jpg" alt="Album Cover" />
+                            <img src="../images/tera_tera.jpg" alt="Tera Tera" />
                         </div>
                         <div class="song-info">
-                            <span class="song-title">The Finest</span>
+                            <span class="song-title">Tera Tera</span>
                         </div>
-                        <div class="song-listeners">34,587,060</div>
-                        <div class="song-duration">2:58</div>
-                        <audio src="../songs/the_finest.mp3"></audio>
+                        <div class="song-listeners">28,900,000</div>
+                        <div class="song-duration">3:45</div>
+                        <audio src="../songs/tera_tera.mp3"></audio>
                     </li>
+
                     <li class="song-item">
                         <span class="song-number">3</span>
                         <div class="song-controls">
-                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                            <button class="song-play-pause-btn">
                                 <i class="fas fa-play play-icon"></i>
                                 <i class="fas fa-pause pause-icon"></i>
                             </button>
                         </div>
                         <div class="song-album-cover">
-                            <img src="../images/no_midman.jpg" alt="Album Cover" />
+                            <img src="../images/mohali_block.jpg" alt="Mohali Block" />
                         </div>
                         <div class="song-info">
-                            <span class="song-title">No Midman</span>
+                            <span class="song-title">Mohali Block</span>
                         </div>
-                        <div class="song-listeners">12,123,456</div>
-                        <div class="song-duration">3:15</div>
-                        <audio src="../songs/no_midman.mp3"></audio>
+                        <div class="song-listeners">27,500,000</div>
+                        <div class="song-duration">3:30</div>
+                        <audio src="../songs/mohali_block.mp3"></audio>
                     </li>
+
                     <li class="song-item">
                         <span class="song-number">4</span>
                         <div class="song-controls">
-                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                            <button class="song-play-pause-btn">
                                 <i class="fas fa-play play-icon"></i>
                                 <i class="fas fa-pause pause-icon"></i>
                             </button>
                         </div>
                         <div class="song-album-cover">
-                            <img src="../images/my_prime.jpg" alt="Album Cover" />
+                            <img src="../images/desi_touch.jpg" alt="Desi Touch" />
                         </div>
                         <div class="song-info">
-                            <span class="song-title">My Prime</span>
+                            <span class="song-title">Desi Touch</span>
                         </div>
-                        <div class="song-listeners">9,876,543</div>
-                        <div class="song-duration">2:45</div>
-                        <audio src="../songs/my_prime.mp3"></audio>
+                        <div class="song-listeners">26,800,000</div>
+                        <div class="song-duration">3:40</div>
+                        <audio src="../songs/desi_touch.mp3"></audio>
                     </li>
+
                     <li class="song-item">
                         <span class="song-number">5</span>
                         <div class="song-controls">
-                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                            <button class="song-play-pause-btn">
                                 <i class="fas fa-play play-icon"></i>
                                 <i class="fas fa-pause pause-icon"></i>
                             </button>
                         </div>
                         <div class="song-album-cover">
-                            <img src="../images/the_finest.jpg" alt="Album Cover" />
+                            <img src="../images/gumshuda.jpg" alt="Gumshuda" />
                         </div>
                         <div class="song-info">
-                            <span class="song-title">Ambarsaria</span>
+                            <span class="song-title">Gumshuda</span>
                         </div>
-                        <div class="song-listeners">8,543,210</div>
-                        <div class="song-duration">3:30</div>
-                        <audio src="../songs/ambarsaria.mp3"></audio>
+                        <div class="song-listeners">25,900,000</div>
+                        <div class="song-duration">3:35</div>
+                        <audio src="../songs/gumshuda.mp3"></audio>
                     </li>
+
                     <li class="song-item">
                         <span class="song-number">6</span>
                         <div class="song-controls">
-                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                            <button class="song-play-pause-btn">
                                 <i class="fas fa-play play-icon"></i>
                                 <i class="fas fa-pause pause-icon"></i>
                             </button>
                         </div>
                         <div class="song-album-cover">
-                            <img src="../images/sit_down_son.jpg" alt="Album Cover" />
+                            <img src="../images/wedding_song.jpg" alt="Wedding Song" />
                         </div>
                         <div class="song-info">
-                            <span class="song-title">Sit Down Son</span>
+                            <span class="song-title">Wedding Song</span>
                         </div>
-                        <div class="song-listeners">7,654,321</div>
-                        <div class="song-duration">4:01</div>
-                        <audio src="../songs/sit_down_son.mp3"></audio>
+                        <div class="song-listeners">24,750,000</div>
+                        <div class="song-duration">4:00</div>
+                        <audio src="../songs/wedding_song.mp3"></audio>
                     </li>
+
                     <li class="song-item">
                         <span class="song-number">7</span>
                         <div class="song-controls">
-                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                            <button class="song-play-pause-btn">
                                 <i class="fas fa-play play-icon"></i>
                                 <i class="fas fa-pause pause-icon"></i>
                             </button>
                         </div>
                         <div class="song-album-cover">
-                            <img src="../images/waymaker.jpg" alt="Album Cover" />
+                            <img src="../images/kudiye_chidiye.jpg" alt="Kudiye Chidiye" />
                         </div>
                         <div class="song-info">
-                            <span class="song-title">C Walk</span>
+                            <span class="song-title">Kudiye Chidiye</span>
                         </div>
-                        <div class="song-listeners">6,543,210</div>
-                        <div class="song-duration">2:55</div>
-                        <audio src="../songs/c_walk.mp3"></audio>
+                        <div class="song-listeners">23,600,000</div>
+                        <div class="song-duration">3:55</div>
+                        <audio src="../songs/kudiye_chidiye.mp3"></audio>
                     </li>
+
                     <li class="song-item">
                         <span class="song-number">8</span>
                         <div class="song-controls">
-                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                            <button class="song-play-pause-btn">
                                 <i class="fas fa-play play-icon"></i>
                                 <i class="fas fa-pause pause-icon"></i>
                             </button>
                         </div>
                         <div class="song-album-cover">
-                            <img src="../images/warriors_honour.jpg" alt="Album Cover" />
+                            <img src="../images/meri_zindgi_bana_ja.jpg" alt="Meri Zindgi Bana Ja" />
                         </div>
                         <div class="song-info">
-                            <span class="song-title">Apology</span>
+                            <span class="song-title">Meri Zindgi Bana Ja</span>
                         </div>
-                        <div class="song-listeners">5,432,109</div>
-                        <div class="song-duration">3:10</div>
-                        <audio src="../songs/apology.mp3"></audio>
+                        <div class="song-listeners">22,900,000</div>
+                        <div class="song-duration">3:50</div>
+                        <audio src="../songs/meri_zindgi_bana_ja.mp3"></audio>
                     </li>
+
                     <li class="song-item">
                         <span class="song-number">9</span>
                         <div class="song-controls">
-                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                            <button class="song-play-pause-btn">
                                 <i class="fas fa-play play-icon"></i>
                                 <i class="fas fa-pause pause-icon"></i>
                             </button>
                         </div>
                         <div class="song-album-cover">
-                            <img src="../images/raah.jpg" alt="Album Cover" />
+                            <img src="../images/dil_da_dimaag.jpg" alt="Dil Da Dimaag" />
                         </div>
                         <div class="song-info">
-                            <span class="song-title">Raah</span>
+                            <span class="song-title">Dil Da Dimaag</span>
                         </div>
-                        <div class="song-listeners">4,321,098</div>
-                        <div class="song-duration">3:45</div>
-                        <audio src="../songs/raah.mp3"></audio>
+                        <div class="song-listeners">30,400,000</div>
+                        <div class="song-duration">4:05</div>
+                        <audio src="../songs/dil_da_dimaag.mp3"></audio>
                     </li>
+
                     <li class="song-item">
                         <span class="song-number">10</span>
                         <div class="song-controls">
-                            <button class="song-play-pause-btn" onclick="playAudio(this.closest('.song-item'))">
+                            <button class="song-play-pause-btn">
                                 <i class="fas fa-play play-icon"></i>
                                 <i class="fas fa-pause pause-icon"></i>
                             </button>
                         </div>
                         <div class="song-album-cover">
-                            <img src="../images/paper_before_money.jpg" alt="Album Cover" />
+                            <img src="../images/gulaab.jpg" alt="Gulaab" />
                         </div>
                         <div class="song-info">
-                            <span class="song-title">Paper Before Money</span>
+                            <span class="song-title">Gulaab</span>
                         </div>
-                        <div class="song-listeners">3,210,987</div>
-                        <div class="song-duration">3:05</div>
-                        <audio src="../songs/paper_before_money.mp3"></audio>
+                        <div class="song-listeners">21,500,000</div>
+                        <div class="song-duration">3:45</div>
+                        <audio src="../songs/gulaab.mp3"></audio>
                     </li>
                 </ul>
             </section>
-            
-            <section class="albums-section">
+             <section class="albums-section">
                 <h2 class="popular-tracks-title">Albums</h2>
                 <div class="albums-grid">
-                    <div class="album-card">
-                        <img src="../images/naveezy.jpg" alt="Album Cover" class="album-img-circle" />
+                    <div class="album-card" onclick="window.location.href='yaar_anmulle.html'">
+                        <img src="../images/yaar_anmulle.jpg" alt="Album Cover" class="album-img-circle" />
                         <div class="card-content">
-                            <h3 class="card-title">Naveezy</h3>
-                            <p class="card-subtitle">Navaan Sandhu</p>
+                            <h3 class="card-title">Yaar Anmulle</h3>
+                            <p class="card-subtitle">2011</p>
                         </div>
-                        <button class="play-pause-btn-circle" onclick="playAudio(this.closest('.album-card'))">
-                            <i class="fas fa-play play-icon"></i>
-                            <i class="fas fa-pause pause-icon"></i>
-                        </button>
-                        <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3"></audio>
                     </div>
-                    <div class="album-card">
-                        <img src="../images/the_finest.jpg" alt="Album Cover" class="album-img-circle" />
+
+                    <div class="album-card" onclick="window.location.href='aate_di_chiri.html'">
+                        <img src="../images/aate_di_chiri.jpg" alt="Album Cover" class="album-img-circle" />
                         <div class="card-content">
-                            <h3 class="card-title">The Finest</h3>
-                            <p class="card-subtitle">Navaan Sandu</p>
+                            <h3 class="card-title">Aate Di Chiri</h3>
+                            <p class="card-subtitle">2012</p>
                         </div>
-                        <button class="play-pause-btn-circle" onclick="playAudio(this.closest('.album-card'))">
-                            <i class="fas fa-play play-icon"></i>
-                            <i class="fas fa-pause pause-icon"></i>
-                        </button>
-                        <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3"></audio>
                     </div>
-                    <div class="album-card">
-                        <img src="../images/waymaker.jpg" alt="Album Cover" class="album-img-circle" />
+
+                    <div class="album-card" onclick="window.location.href='yaar_anmulle_returns.html'">
+                        <img src="../images/yaar_anmulle_returns.jpg" alt="Album Cover" class="album-img-circle" />
                         <div class="card-content">
-                            <h3 class="card-title">Waymaker</h3>
-                            <p class="card-subtitle">Navaan Sandhu</p>
+                            <h3 class="card-title">Yaar Anmulle Returns</h3>
+                            <p class="card-subtitle">2021</p>
                         </div>
-                        <button class="play-pause-btn-circle" onclick="playAudio(this.closest('.album-card'))">
-                            <i class="fas fa-play play-icon"></i>
-                            <i class="fas fa-pause pause-icon"></i>
-                        </button>
-                        <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"></audio>
                     </div>
-                    
                 </div>
             </section>
         </main>
     </div>
-
-   <div class="playback-message" id="playbackMessage"></div>
 
     <div class="now-playing-bar" id="nowPlayingBar">
         <div class="now-playing-left">
             <img src="" alt="Album Cover" class="now-playing-cover" id="nowPlayingCover">
             <div class="now-playing-info">
                 <span class="now-playing-title" id="nowPlayingTitle">No song playing</span>
-                <span class="now-playing-artist" id="nowPlayingArtist">Arjan Dhillon</span>
+                <span class="now-playing-artist" id="nowPlayingArtist">Sharry Maan</span>
             </div>
         </div>
-        
         <div class="now-playing-center">
             <div class="player-controls">
                 <button class="player-control-btn small" id="shuffleBtn"><i class="fas fa-random"></i></button>
@@ -336,7 +308,6 @@
                 <button class="player-control-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
                 <button class="player-control-btn small" id="repeatBtn"><i class="fas fa-redo"></i></button>
             </div>
-            
             <div class="progress-bar-container">
                 <span class="time-display" id="currentTime">0:00</span>
                 <div class="progress-bar" id="progressBar">
@@ -345,14 +316,10 @@
                 <span class="time-display" id="totalTime">0:00</span>
             </div>
         </div>
-        
-        <div class="now-playing-right">
-             <!-- Volume controls can be added here -->
-        </div>
     </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
+
+    <script >
+         document.addEventListener('DOMContentLoaded', () => {
             const songItems = document.querySelectorAll('.song-item');
             const nowPlayingBar = document.getElementById('nowPlayingBar');
             const nowPlayingCover = document.getElementById('nowPlayingCover');
@@ -496,6 +463,8 @@
                 }
             }
         });
+
+
     </script>
 </body>
 </html>

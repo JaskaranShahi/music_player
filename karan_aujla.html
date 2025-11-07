@@ -315,56 +315,187 @@
     </div>
 
     <div class="playback-message" id="playbackMessage"></div>
+
+    <div class="now-playing-bar" id="nowPlayingBar">
+        <div class="now-playing-left">
+            <img src="" alt="Album Cover" class="now-playing-cover" id="nowPlayingCover">
+            <div class="now-playing-info">
+                <span class="now-playing-title" id="nowPlayingTitle">No song playing</span>
+                <span class="now-playing-artist" id="nowPlayingArtist">Arjan Dhillon</span>
+            </div>
+        </div>
+        
+        <div class="now-playing-center">
+            <div class="player-controls">
+                <button class="player-control-btn small" id="shuffleBtn"><i class="fas fa-random"></i></button>
+                <button class="player-control-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                <button class="player-control-btn main" id="mainPlayPauseBtn">
+                    <i class="fas fa-play" id="mainPlayIcon"></i>
+                    <i class="fas fa-pause" id="mainPauseIcon"></i>
+                </button>
+                <button class="player-control-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
+                <button class="player-control-btn small" id="repeatBtn"><i class="fas fa-redo"></i></button>
+            </div>
+            
+            <div class="progress-bar-container">
+                <span class="time-display" id="currentTime">0:00</span>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-bar-inner" id="progressBarInner"></div>
+                </div>
+                <span class="time-display" id="totalTime">0:00</span>
+            </div>
+        </div>
+        
+        <div class="now-playing-right">
+             <!-- Volume controls can be added here -->
+        </div>
+    </div>
     
     <script>
-        let currentAudio = null;
-        let playbackTimeout = null;
-        const playbackMessage = document.getElementById('playbackMessage');
+        document.addEventListener('DOMContentLoaded', () => {
+            const songItems = document.querySelectorAll('.song-item');
+            const nowPlayingBar = document.getElementById('nowPlayingBar');
+            const nowPlayingCover = document.getElementById('nowPlayingCover');
+            const nowPlayingTitle = document.getElementById('nowPlayingTitle');
+            const mainPlayPauseBtn = document.getElementById('mainPlayPauseBtn');
+            const mainPlayIcon = document.getElementById('mainPlayIcon');
+            const mainPauseIcon = document.getElementById('mainPauseIcon');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const repeatBtn = document.getElementById('repeatBtn');
+            const currentTimeEl = document.getElementById('currentTime');
+            const totalTimeEl = document.getElementById('totalTime');
+            const progressBar = document.getElementById('progressBar');
+            const progressBarInner = document.getElementById('progressBarInner');
 
-        function playAudio(item) {
-            const audio = item.querySelector('audio');
-            const title = item.querySelector('.song-title') ? item.querySelector('.song-title').textContent : item.querySelector('.card-title').textContent;
+            let currentAudio = null;
+            let currentTrackIndex = -1;
+            let isRepeating = false;
+            
+            const tracks = Array.from(songItems);
 
-            if (currentAudio && currentAudio !== audio) {
-                currentAudio.pause();
-                currentAudio.currentTime = 0;
-                currentAudio.closest('.song-item, .album-card').classList.remove('playing');
-            }
+            function playTrack(index) {
+                if (index < 0 || index >= tracks.length) return;
 
-            if (audio.paused) {
+                // Stop currently playing song if any
+                if (currentAudio) {
+                    currentAudio.pause();
+                    const oldItem = tracks[currentTrackIndex];
+                    if (oldItem) oldItem.classList.remove('playing');
+                }
+
+                currentTrackIndex = index;
+                const songItem = tracks[currentTrackIndex];
+                const audio = songItem.querySelector('audio');
+                const cover = songItem.querySelector('.song-album-cover img').src;
+                const title = songItem.querySelector('.song-title').textContent;
+
+                audio.currentTime = 0;
                 audio.play();
+                
+                nowPlayingBar.style.display = 'grid'; // Make the bar visible
+                nowPlayingCover.src = cover;
+                nowPlayingTitle.textContent = title;
+                mainPlayIcon.style.display = 'none';
+                mainPauseIcon.style.display = 'block';
+                songItem.classList.add('playing');
+                
                 currentAudio = audio;
-                item.classList.add('playing');
-                showPlaybackMessage(`Now playing: "${title}"`);
-            } else {
-                audio.pause();
-                currentAudio = null;
-                item.classList.remove('playing');
-                hidePlaybackMessage();
+
+                currentAudio.addEventListener('timeupdate', updateProgress);
+                currentAudio.addEventListener('loadedmetadata', () => {
+                    totalTimeEl.textContent = formatTime(currentAudio.duration);
+                });
+                currentAudio.addEventListener('ended', playNextTrack);
             }
-        }
+            
+            function togglePlayPause() {
+                if (currentAudio) {
+                    if (currentAudio.paused) {
+                        currentAudio.play();
+                        mainPlayIcon.style.display = 'none';
+                        mainPauseIcon.style.display = 'block';
+                         tracks[currentTrackIndex].classList.add('playing');
+                    } else {
+                        currentAudio.pause();
+                        mainPlayIcon.style.display = 'block';
+                        mainPauseIcon.style.display = 'none';
+                        tracks[currentTrackIndex].classList.remove('playing');
+                    }
+                } else if (tracks.length > 0) {
+                    playTrack(0); // Play the first song if nothing is playing
+                }
+            }
+            
+            function playNextTrack() {
+                 if (isRepeating && currentAudio) {
+                    currentAudio.currentTime = 0;
+                    currentAudio.play();
+                 } else {
+                    playTrack((currentTrackIndex + 1) % tracks.length);
+                 }
+            }
 
-        function playPopularTrack() {
-            const firstTrack = document.querySelector('.song-item');
-            playAudio(firstTrack);
-        }
-        
-        function showPlaybackMessage(message) {
-            clearTimeout(playbackTimeout);
-            playbackMessage.textContent = message;
-            playbackMessage.style.display = 'block';
-            playbackMessage.style.opacity = '1';
-            playbackTimeout = setTimeout(() => {
-                hidePlaybackMessage();
-            }, 3000);
-        }
+            function playPrevTrack() {
+                if (currentAudio && currentAudio.currentTime > 3) {
+                    currentAudio.currentTime = 0;
+                } else {
+                    playTrack((currentTrackIndex - 1 + tracks.length) % tracks.length);
+                }
+            }
 
-        function hidePlaybackMessage() {
-            playbackMessage.style.opacity = '0';
-            setTimeout(() => {
-                playbackMessage.style.display = 'none';
-            }, 500);
-        }
+            function updateProgress() {
+                if (currentAudio && currentAudio.duration) {
+                    const progressPercent = (currentAudio.currentTime / currentAudio.duration) * 100;
+                    progressBarInner.style.width = `${progressPercent}%`;
+                    currentTimeEl.textContent = formatTime(currentAudio.currentTime);
+                }
+            }
+
+            function setProgress(e) {
+                const width = this.clientWidth;
+                const clickX = e.offsetX;
+                if (currentAudio && currentAudio.duration) {
+                    currentAudio.currentTime = (clickX / width) * currentAudio.duration;
+                }
+            }
+
+            function formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+
+            // Event Listeners
+            tracks.forEach((item, index) => {
+                const playBtn = item.querySelector('.song-play-pause-btn');
+                playBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (currentTrackIndex === index && currentAudio && !currentAudio.paused) {
+                        togglePlayPause();
+                    } else {
+                        playTrack(index);
+                    }
+                });
+            });
+
+            mainPlayPauseBtn.addEventListener('click', togglePlayPause);
+            nextBtn.addEventListener('click', playNextTrack);
+            prevBtn.addEventListener('click', playPrevTrack);
+            progressBar.addEventListener('click', setProgress);
+            repeatBtn.addEventListener('click', () => {
+                isRepeating = !isRepeating;
+                repeatBtn.style.color = isRepeating ? 'var(--primary)' : 'var(--text-muted)';
+            });
+            
+            window.playPopularTrack = () => {
+                if (currentAudio && !currentAudio.paused) {
+                    togglePlayPause();
+                } else {
+                     playTrack(0);
+                }
+            }
+        });
     </script>
 </body>
 </html>
